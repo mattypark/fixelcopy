@@ -349,6 +349,119 @@ Type here</textarea
       </div>
     </section>
 
+    <!-- Alternate glyphs -->
+    <section class="alternatives">
+      <h2 class="alternatives-title" data-observed>Alternatives</h2>
+
+      <div class="tabs">
+        <div class="tabs-menu" role="tablist">
+          <button class="tab-link active" type="button" data-tab="latin" role="tab">Latin</button>
+          <button class="tab-link" type="button" data-tab="cyrillic" role="tab">Cyrillic</button>
+        </div>
+
+        <div class="tab-pane active" data-pane="latin">
+          <div class="letters-grid">
+            <button class="letter-2 alternative is-active" type="button">a</button>
+            <button class="letter-2 alternative" type="button">g</button>
+            <button class="letter-2 alternative" type="button">l</button>
+            <button class="letter-2 alternative" type="button">y</button>
+            <button class="letter-2 alternative" type="button">t</button>
+            <button class="letter-2 alternative" type="button">Q</button>
+            <button class="letter-2 alternative" type="button">R</button>
+            <button class="letter-2 alternative" type="button">1</button>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare" data-default>a</div>
+            <div class="compare right" data-alternative>a</div>
+          </div>
+
+          <div class="compare-caption">
+            <span>Default</span>
+            <span>Stylistic set 01</span>
+          </div>
+        </div>
+
+        <div class="tab-pane" data-pane="cyrillic">
+          <div class="letters-grid">
+            <button class="letter-2 alternative is-active" type="button">а</button>
+            <button class="letter-2 alternative" type="button">б</button>
+            <button class="letter-2 alternative" type="button">д</button>
+            <button class="letter-2 alternative" type="button">и</button>
+            <button class="letter-2 alternative" type="button">й</button>
+            <button class="letter-2 alternative" type="button">у</button>
+            <button class="letter-2 alternative" type="button">ф</button>
+            <button class="letter-2 alternative" type="button">я</button>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare" data-default>а</div>
+            <div class="compare right" data-alternative>а</div>
+          </div>
+
+          <div class="compare-caption">
+            <span>Default</span>
+            <span>Stylistic set 01</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special glyph set -->
+    <section class="symbols">
+      <h2 class="symbols-title" data-observed>Special characters, drawn to match</h2>
+
+      <p class="symbols-lead" data-observed>
+        Placeholder copy standing in for the original paragraph about the extended symbol set
+        and the keys it sits on.
+      </p>
+
+      <div class="range-wrapper symbol-range">
+        <span class="min-max symbol-range">W</span>
+        <input
+          class="range"
+          type="range"
+          min="100"
+          max="900"
+          step="1"
+          value="400"
+          data-input-range="symbol-weight"
+          aria-label="Symbol weight"
+        />
+        <span class="min-max value symbol-range" data-value="symbol-weight">400</span>
+      </div>
+
+      <div class="symbols-wrapper">
+        <div class="symbol-item"><span class="symbol-glyph">&amp;</span><span class="symbol-key">7</span><span class="symbol-caption">Ampersand</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">@</span><span class="symbol-key">2</span><span class="symbol-caption">At sign</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">§</span><span class="symbol-key">S</span><span class="symbol-caption">Section</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">¶</span><span class="symbol-key">P</span><span class="symbol-caption">Pilcrow</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">†</span><span class="symbol-key">T</span><span class="symbol-caption">Dagger</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">‡</span><span class="symbol-key">Y</span><span class="symbol-caption">Double dagger</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">№</span><span class="symbol-key">N</span><span class="symbol-caption">Numero</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">%</span><span class="symbol-key">5</span><span class="symbol-caption">Percent</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">‰</span><span class="symbol-key">R</span><span class="symbol-caption">Per mille</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">€</span><span class="symbol-key">E</span><span class="symbol-caption">Euro</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">$</span><span class="symbol-key">4</span><span class="symbol-caption">Dollar</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">₴</span><span class="symbol-key">H</span><span class="symbol-caption">Hryvnia</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">£</span><span class="symbol-key">L</span><span class="symbol-caption">Pound</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">¥</span><span class="symbol-key">J</span><span class="symbol-caption">Yen</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">≈</span><span class="symbol-key">X</span><span class="symbol-caption">Approx</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">≠</span><span class="symbol-key">=</span><span class="symbol-caption">Not equal</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">→</span><span class="symbol-key">K</span><span class="symbol-caption">Arrow</span></div>
+        <div class="symbol-item"><span class="symbol-glyph">★</span><span class="symbol-key">M</span><span class="symbol-caption">Star</span></div>
+      </div>
+
+      <div class="download-button-container">
+        <form class="send-fixel-form-wrapper" data-email-form novalidate>
+          <input type="email" name="email" placeholder="you@example.com" required />
+          <button class="download-button" type="submit">Send me the files</button>
+          <p class="success-message">Saved locally — nothing left the browser.</p>
+          <p class="error-message">That address does not look right.</p>
+        </form>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
