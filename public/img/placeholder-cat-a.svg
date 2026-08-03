@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180" height="120" role="img" aria-label="Image placeholder">
+  <rect x="1" y="1" width="178" height="118" rx="14" fill="#f1edf8" stroke="#c9b7ec" stroke-width="2" stroke-dasharray="8 6" />
+  <text
+    x="90"
+    y="64"
+    text-anchor="middle"
+    font-family="Helvetica, Arial, sans-serif"
+    font-size="12"
+    letter-spacing="1.5"
+    fill="#8b79b5"
+  >
+    IMAGE PLACEHOLDER
+  </text>
+</svg>

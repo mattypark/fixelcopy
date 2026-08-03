@@ -1,0 +1,179 @@
+/* Three full-height statements crossfading inside one sticky viewport. */
+
+.sticky-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.sticky-scroll {
+  width: 1px;
+  min-height: 300vh;
+}
+
+.sticky-content {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.sticky-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 32px;
+  text-align: center;
+}
+
+.sticky-item._2,
+.sticky-item._3 {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.sticky-item._2 {
+  z-index: 1;
+}
+
+.sticky-item._3 {
+  z-index: 2;
+}
+
+/* Panel state is driven by sticky.js writing --panel-opacity / --panel-shift. */
+.sticky-item {
+  opacity: var(--panel-opacity, 1);
+  transform: translate3d(0, var(--panel-shift, 0px), 0);
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.introduction {
+  margin-bottom: 28px;
+  font-size: 18px;
+  line-height: 140%;
+  opacity: 0.5;
+}
+
+.introduction-title {
+  max-width: 1200px;
+  font-size: 96px;
+  line-height: 100%;
+  font-variation-settings: 'wght' 400, 'wdth' 100;
+  color: var(--color-black);
+  text-align: center;
+}
+
+.introduction-title .marked {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.introduction-title .marked.bold {
+  font-variation-settings: 'wght' 700, 'wdth' 100;
+}
+
+/* Hand-drawn annotation strokes draw themselves once the panel is revealed. */
+.introduction-title .marked svg {
+  position: absolute;
+  z-index: 1;
+  top: -15px;
+  left: -13px;
+  width: 110%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.introduction-title .marked svg path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 1s ease-in;
+}
+
+.introduction-title .marked:not(.bold) svg path {
+  transition: stroke-dashoffset 1s 1s ease-in;
+}
+
+.introduction-title.shown .marked svg path {
+  stroke-dashoffset: 0;
+}
+
+.introduction-title .marked.bold > svg {
+  top: -10px;
+  left: -36px;
+  width: 116%;
+}
+
+.intro-text {
+  max-width: 720px;
+  margin-top: 32px;
+  font-size: var(--text-lead);
+  line-height: 140%;
+  color: var(--color-muted);
+}
+
+/* Word-hover thumbnails on the second panel. */
+.opacity-hover {
+  position: relative;
+  cursor: default;
+}
+
+.opacity-hover .hover-art {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 180px;
+  opacity: 0;
+  transform: translate3d(-50%, 12px, 0) rotate(-4deg);
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+  pointer-events: none;
+}
+
+.opacity-hover:hover .hover-art {
+  opacity: 1;
+  transform: translate3d(-50%, -8px, 0) rotate(-4deg);
+}
+
+@media screen and (max-width: 991px) {
+  .introduction-title {
+    font-size: 50px;
+  }
+
+  .introduction-title .marked.bold > svg {
+    top: -13px;
+    left: -24px;
+    width: 115%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .introduction-title {
+    font-size: 48px;
+  }
+
+  .introduction-title .marked.bold > svg {
+    top: -9px;
+    left: -15px;
+    width: 114%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .introduction-title {
+    font-size: 36px;
+  }
+
+  .introduction-title .marked.bold > svg {
+    top: -6px;
+    left: -10px;
+  }
+}
