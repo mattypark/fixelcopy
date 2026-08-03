@@ -1,0 +1,19 @@
+{
+  "name": "fixelcopy",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Study rebuild of the Fixel typeface site — layout, motion, and variable-font playground written from scratch.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "assets": "node scripts/fetch-assets.mjs"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "lottie-web": "^5.12.2"
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240" width="120" height="240" role="img" aria-label="Decorative tail placeholder">
+  <path
+    d="M60 240V120c0-34 14-58 42-70-20 26-24 48-12 66 12 18 10 38-6 56"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="14"
+    stroke-linecap="round"
+  />
+</svg>

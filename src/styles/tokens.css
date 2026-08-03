@@ -1,0 +1,69 @@
+/* Design tokens — palette, type scale, spacing, motion. */
+
+:root {
+  /* Palette */
+  --color-lilac: #c9b7ec;
+  --color-lilac-deep: #b7a1e4;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-ink: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4f2f7;
+  --color-yellow: #ffd700;
+  --color-blue: #0057b7;
+
+  /* Radii */
+  --radius-header: 34px;
+  --radius-pill: 50px;
+  --radius-card: 24px;
+
+  /* Type */
+  --font-display: 'FixelGT', 'Helvetica Neue', Arial, sans-serif;
+  --font-italic: 'FixelGT-Italic', 'FixelGT', Arial, sans-serif;
+
+  --text-hero: 406px;
+  --text-section: clamp(2.5rem, 1.6rem + 4.4vw, 7.5rem);
+  --text-lead: clamp(1.25rem, 1.05rem + 1vw, 2rem);
+  --text-body: 18px;
+  --text-small: 14px;
+
+  --leading-hero: 50%;
+  --leading-tight: 1.05;
+  --leading-body: 1.45;
+
+  /* Spacing */
+  --space-edge: 60px;
+  --space-section: clamp(5rem, 3rem + 8vw, 14rem);
+  --space-gap: 32px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 1000ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: ease;
+
+  /* Reveal defaults (IntersectionObserver driven) */
+  --reveal-shift: 40px;
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --text-hero: 333px;
+    --space-edge: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --text-hero: 230px;
+    --space-edge: 24px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :root {
+    --text-hero: 160px;
+  }
+}

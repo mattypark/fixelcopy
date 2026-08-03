@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.vite/
+
+# env
+.env
+.env.*
+!.env.example
+
+# os
+.DS_Store
+Thumbs.db
+
+# editor
+.idea/
+.vscode/
+
+# fetched third-party artwork (pulled locally with `npm run assets`, not redistributed)
+public/img/vendor/
+public/lottie/vendor/

@@ -1,0 +1,153 @@
+/* Hero wordmark: one span per letter, hover ripples weight outward. */
+
+.hero {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
+h1.Heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  line-height: var(--leading-hero);
+  color: var(--color-white);
+  cursor: default;
+  opacity: 0;
+}
+
+h1.Heading.shown {
+  opacity: 1;
+  animation: hero-fade var(--duration-slow) var(--ease-standard) 1;
+}
+
+h1.Heading span {
+  position: relative;
+  margin: 0 -5px;
+  font-variation-settings: 'wght' 500, 'wdth' 100;
+  transition: font-variation-settings var(--duration-normal) var(--ease-standard);
+}
+
+/* Neighbours thin out with distance from the hovered letter. */
+h1.Heading span.sibling-1 {
+  font-variation-settings: 'wght' 400, 'wdth' 100;
+}
+
+h1.Heading span.sibling-2 {
+  font-variation-settings: 'wght' 300, 'wdth' 100;
+}
+
+h1.Heading span.sibling-3 {
+  font-variation-settings: 'wght' 200, 'wdth' 100;
+}
+
+h1.Heading span.sibling-4 {
+  font-variation-settings: 'wght' 80, 'wdth' 100;
+}
+
+h1.Heading span:hover,
+h1.Heading span.active {
+  font-variation-settings: 'wght' 700, 'wdth' 100;
+}
+
+h1.Heading span:nth-child(4) {
+  z-index: 2;
+}
+
+h1.Heading span:first-child,
+h1.Heading span:last-child {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lilac masks hide the decorative art until the outer letters are hovered. */
+h1.Heading span:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 120px;
+  height: 240px;
+  background-color: var(--color-lilac);
+  transform: translate3d(50px, 0, 0);
+}
+
+h1.Heading span:first-child .hero-art {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+  width: 120px;
+  transform: translate3d(50px, 0, 0) scaleX(0.8);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+h1.Heading span:first-child.active .hero-art {
+  transform: translate3d(-88px, 0, 0);
+}
+
+h1.Heading span:last-child::before {
+  content: '';
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+  z-index: -1;
+  width: 90px;
+  height: 270px;
+  background-color: var(--color-lilac);
+  transform: translateZ(0);
+}
+
+h1.Heading span:last-child .hero-art {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  width: 120px;
+  transform: translate3d(-17px, 0, 0) scaleX(0.8);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+h1.Heading span:last-child.active .hero-art {
+  transform: translate3d(88px, 0, 0);
+}
+
+@keyframes hero-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  h1.Heading span:last-child.active .hero-art {
+    transform: translate3d(72px, 0, 0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1.Heading span:first-child::before,
+  h1.Heading span:last-child::before,
+  h1.Heading .hero-art {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h1.Heading {
+    width: auto;
+    font-weight: 500;
+  }
+}

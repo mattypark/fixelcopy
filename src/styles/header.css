@@ -1,0 +1,198 @@
+/* Lilac hero shell: full-viewport panel with rounded bottom corners. */
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-lilac);
+  border-bottom-left-radius: var(--radius-header);
+  border-bottom-right-radius: var(--radius-header);
+  font-family: var(--font-display);
+}
+
+.brand {
+  position: absolute;
+  top: 40px;
+  left: var(--space-edge);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+}
+
+.brand__name {
+  font-variation-settings: 'wght' 700, 'wdth' 100;
+}
+
+.brand__product {
+  font-variation-settings: 'wght' 300, 'wdth' 100;
+  opacity: 0.85;
+}
+
+/* Feedback pill */
+.leave-feedback-button {
+  position: absolute;
+  top: 40px;
+  right: var(--space-edge);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0 35px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-pill);
+  color: var(--color-white);
+  font-size: 18px;
+  line-height: 24px;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.leave-feedback-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-lilac);
+}
+
+.leave-feedback-button[hidden] {
+  display: none;
+}
+
+/* Feedback panel — replaces the pill in place when opened. */
+.feedback-form-wrapper {
+  position: absolute;
+  top: 40px;
+  right: var(--space-edge);
+  z-index: 5;
+  width: min(420px, calc(100vw - var(--space-edge) * 2));
+  padding: 28px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-card);
+  background-color: var(--color-lilac);
+  color: var(--color-white);
+  opacity: 0;
+  transform: translate3d(0, -12px, 0) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.feedback-form-wrapper.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.feedback-form-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  font-size: 22px;
+  opacity: 0.8;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.feedback-form-close:hover {
+  opacity: 1;
+}
+
+.feedback-form-title {
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-variation-settings: 'wght' 500, 'wdth' 100;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.feedback-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.feedback-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: var(--text-small);
+  opacity: 0.9;
+}
+
+.feedback-file input {
+  max-width: 60%;
+  font-size: 12px;
+}
+
+.submit-wrapper {
+  margin-top: 18px;
+}
+
+.feedback-submit {
+  width: 100%;
+  height: 52px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  color: var(--color-lilac);
+  font-size: 17px;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.feedback-submit:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.success-message,
+.error-message {
+  display: none;
+  margin-top: 14px;
+  font-size: var(--text-small);
+}
+
+.success-message.is-visible,
+.error-message.is-visible {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .brand {
+    top: 24px;
+    font-size: 20px;
+  }
+
+  .leave-feedback-button,
+  .feedback-form-wrapper {
+    top: auto;
+    bottom: 30px;
+    right: 50%;
+    transform: translate3d(50%, 0, 0);
+    min-width: 210px;
+  }
+
+  .feedback-form-wrapper.is-open {
+    transform: translate3d(50%, 0, 0);
+  }
+}
