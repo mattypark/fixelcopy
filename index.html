@@ -160,6 +160,195 @@
       </div>
     </section>
 
+    <!-- Statement -->
+    <section class="section-2">
+      <div class="text-container" data-observed>
+        <h2 class="section-title">
+          A grotesque with a <em>human</em> tilt — geometric bones, drawn corners
+        </h2>
+      </div>
+    </section>
+
+    <!-- Two styles, nine weights -->
+    <section class="section-3">
+      <div class="styles-block" data-observed>
+        <h3>Two styles</h3>
+        <p>
+          Display is drawn for large sizes and tight settings. Text carries a narrower width
+          axis for long-form reading. Both share one skeleton.
+        </p>
+      </div>
+
+      <div class="weights-block" data-observed>
+        <h3>Nine weights</h3>
+        <p>
+          Thin through Black, each with a matching italic, plus a continuous weight axis in
+          the variable file.
+        </p>
+      </div>
+
+      <div class="specimen-grid">
+        <div class="specimen-column _display" data-observed>
+          <h4>Display</h4>
+          <ul class="weight-list">
+            <li style="font-variation-settings: 'wght' 100">Thin</li>
+            <li style="font-variation-settings: 'wght' 200">ExtraLight</li>
+            <li style="font-variation-settings: 'wght' 300">Light</li>
+            <li style="font-variation-settings: 'wght' 400">Regular</li>
+            <li style="font-variation-settings: 'wght' 500">Medium</li>
+            <li style="font-variation-settings: 'wght' 600">SemiBold</li>
+            <li style="font-variation-settings: 'wght' 700">Bold</li>
+            <li style="font-variation-settings: 'wght' 800">ExtraBold</li>
+            <li style="font-variation-settings: 'wght' 900">Black</li>
+          </ul>
+        </div>
+
+        <div class="specimen-column _italic" data-observed>
+          <h4>Italic</h4>
+          <ul class="weight-list">
+            <li style="font-variation-settings: 'wght' 100">Thin</li>
+            <li style="font-variation-settings: 'wght' 200">ExtraLight</li>
+            <li style="font-variation-settings: 'wght' 300">Light</li>
+            <li style="font-variation-settings: 'wght' 400">Regular</li>
+            <li style="font-variation-settings: 'wght' 500">Medium</li>
+            <li style="font-variation-settings: 'wght' 600">SemiBold</li>
+            <li style="font-variation-settings: 'wght' 700">Bold</li>
+            <li style="font-variation-settings: 'wght' 800">ExtraBold</li>
+            <li style="font-variation-settings: 'wght' 900">Black</li>
+          </ul>
+        </div>
+
+        <div class="specimen-column _text" data-observed>
+          <h4>Text</h4>
+          <ul class="weight-list">
+            <li style="font-variation-settings: 'wght' 100, 'wdth' 75">Thin</li>
+            <li style="font-variation-settings: 'wght' 200, 'wdth' 75">ExtraLight</li>
+            <li style="font-variation-settings: 'wght' 300, 'wdth' 75">Light</li>
+            <li style="font-variation-settings: 'wght' 400, 'wdth' 75">Regular</li>
+            <li style="font-variation-settings: 'wght' 500, 'wdth' 75">Medium</li>
+            <li style="font-variation-settings: 'wght' 600, 'wdth' 75">SemiBold</li>
+            <li style="font-variation-settings: 'wght' 700, 'wdth' 75">Bold</li>
+            <li style="font-variation-settings: 'wght' 800, 'wdth' 75">ExtraBold</li>
+            <li style="font-variation-settings: 'wght' 900, 'wdth' 75">Black</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="download-button-container first">
+        <a class="download-button" href="/fonts/FixelVariable.ttf" download>
+          Download the family
+        </a>
+      </div>
+    </section>
+
+    <!-- Variable playground -->
+    <div class="variability-title-container" data-observed>
+      <h2 class="variability-title">Variable</h2>
+    </div>
+
+    <section class="text-editor">
+      <div class="text-editor-container">
+        <div class="controls-container">
+          <div class="ranges-wrapper">
+            <div class="range-wrapper">
+              <span class="min-max">W</span>
+              <input
+                class="range"
+                type="range"
+                min="100"
+                max="900"
+                step="1"
+                value="500"
+                data-input-range="weight"
+                aria-label="Weight"
+              />
+              <span class="min-max value" data-value="weight">500</span>
+            </div>
+
+            <div class="range-wrapper">
+              <span class="min-max">T</span>
+              <input
+                class="range"
+                type="range"
+                min="40"
+                max="240"
+                step="1"
+                value="140"
+                data-input-range="size"
+                aria-label="Text size"
+              />
+              <span class="min-max value" data-value="size">140</span>
+            </div>
+
+            <div class="range-wrapper">
+              <span class="min-max">VA</span>
+              <input
+                class="range"
+                type="range"
+                min="-10"
+                max="20"
+                step="1"
+                value="0"
+                data-input-range="letter-spacing"
+                aria-label="Letter spacing"
+              />
+              <span class="min-max value" data-value="letter-spacing">0</span>
+            </div>
+          </div>
+
+          <div class="editor-tools">
+            <div class="text-align-wrapper">
+              <button class="text-align left" type="button" data-align="left" aria-label="Align left">
+                <span class="text-align-row"></span>
+                <span class="text-align-row last"></span>
+                <span class="text-align-row"></span>
+              </button>
+
+              <button
+                class="text-align center active"
+                type="button"
+                data-align="center"
+                aria-label="Align center"
+              >
+                <span class="text-align-row"></span>
+                <span class="text-align-row last"></span>
+                <span class="text-align-row"></span>
+              </button>
+
+              <button
+                class="text-align right"
+                type="button"
+                data-align="right"
+                aria-label="Align right"
+              >
+                <span class="text-align-row"></span>
+                <span class="text-align-row last"></span>
+                <span class="text-align-row"></span>
+              </button>
+            </div>
+
+            <button class="icon-button" type="button" data-reset aria-label="Reset">&#8635;</button>
+            <button class="icon-button" type="button" data-theme-switch aria-label="Switch theme">
+              &#9680;
+            </button>
+          </div>
+        </div>
+
+        <div class="editor-text">
+          <textarea class="main-text-input" data-text="main" rows="2" spellcheck="false">
+Type here</textarea
+          >
+        </div>
+
+        <div class="bottom-buttons-wrapper">
+          <button class="bottom-button active" type="button" data-font="display">Display</button>
+          <button class="bottom-button" type="button" data-font="text">Text</button>
+          <button class="bottom-button" type="button" data-font="italic">Italic</button>
+          <button class="bottom-button" type="button" data-font="alternative">Alternative</button>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

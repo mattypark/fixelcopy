@@ -1,0 +1,225 @@
+/* Variable-font playground: black panel, lime accents, live axis controls. */
+
+.text-editor {
+  margin-bottom: -80px;
+  padding: 0 var(--space-edge);
+  background-color: var(--color-white);
+}
+
+.text-editor-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  min-height: 830px;
+  margin: 0 auto;
+  padding: 42px 55px 100px;
+  border: 1px solid var(--editor-accent, #cce822);
+  border-radius: 32px;
+  background-color: var(--editor-bg, #000000);
+  color: var(--editor-fg, #ffffff);
+}
+
+/* Theme switch simply inverts the whole panel, like the original. */
+.text-editor-container.is-inverted {
+  filter: invert(1);
+}
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 200px;
+}
+
+.ranges-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.range-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.min-max {
+  color: var(--editor-fg, #ffffff);
+  font-size: 12px;
+}
+
+.min-max.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+}
+
+.range {
+  width: 120px;
+  margin: 0 6px;
+  accent-color: var(--editor-accent, #cce822);
+}
+
+.editor-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.text-align-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.text-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  padding-left: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.text-align.center {
+  align-items: center;
+  padding-left: 0;
+}
+
+.text-align.right {
+  align-items: flex-end;
+  padding: 0 8px 0 0;
+}
+
+.text-align.active {
+  background-color: var(--editor-accent, #cce822);
+}
+
+.text-align.active .text-align-row {
+  background-color: var(--editor-bg, #000000);
+}
+
+.text-align-row {
+  width: 17px;
+  height: 1px;
+  background-color: var(--editor-fg, #ffffff);
+}
+
+.text-align-row.last {
+  width: 13px;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  font-size: 15px;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.icon-button:hover {
+  background-color: var(--editor-accent, #cce822);
+  color: var(--editor-bg, #000000);
+}
+
+.editor-text {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-text-input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--editor-fg, #ffffff);
+  font-family: var(--font-display);
+  font-size: 140px;
+  line-height: 1;
+  text-align: center;
+  resize: none;
+  overflow: hidden;
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+.bottom-buttons-wrapper {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--editor-fg, #ffffff);
+  border-radius: 28px;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.bottom-button {
+  padding: 10px 30px;
+  color: var(--editor-fg, #ffffff);
+  font-size: 24px;
+  line-height: 130%;
+  transition: all 0.2s var(--ease-standard);
+}
+
+.bottom-button:hover {
+  color: var(--editor-accent, #cce822);
+}
+
+.bottom-button.active {
+  background-color: var(--editor-accent, #cce822);
+  color: var(--editor-bg, #000000);
+}
+
+@media screen and (max-width: 991px) {
+  .text-editor-container {
+    min-height: 680px;
+    padding: 32px 20px 90px;
+  }
+
+  .controls-container {
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+  }
+
+  .main-text-input {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .range {
+    width: 90px;
+  }
+
+  .bottom-button {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  .main-text-input {
+    font-size: 50px;
+  }
+}
