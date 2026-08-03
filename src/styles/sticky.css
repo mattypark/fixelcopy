@@ -84,9 +84,10 @@
 .introduction-title .marked svg {
   position: absolute;
   z-index: 1;
-  top: -15px;
-  left: -13px;
+  top: -18%;
+  left: -5%;
   width: 110%;
+  height: 135%;
   overflow: visible;
   pointer-events: none;
 }
@@ -101,14 +102,23 @@
   transition: stroke-dashoffset 1s 1s ease-in;
 }
 
+/* The underline variant sits under the baseline rather than around the word. */
+.introduction-title .marked:not(.bold) > svg {
+  top: 42%;
+  left: -2%;
+  width: 104%;
+  height: 70%;
+}
+
 .introduction-title.shown .marked svg path {
   stroke-dashoffset: 0;
 }
 
 .introduction-title .marked.bold > svg {
-  top: -10px;
-  left: -36px;
+  top: -22%;
+  left: -8%;
   width: 116%;
+  height: 150%;
 }
 
 .intro-text {

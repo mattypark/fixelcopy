@@ -13,13 +13,16 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+/**
+ * Panel centres are spread across the whole scroll range so the first panel is
+ * fully opaque at progress 0 and the last at progress 1. Each panel holds full
+ * opacity through the middle of its slot and crossfades over the outer 40%.
+ */
 function panelOpacity(progress, index, panelCount) {
-  // Each panel owns a 1/panelCount slice, with a crossfade at the seams.
-  const slice = 1 / panelCount;
-  const center = slice * index + slice / 2;
-  const distance = Math.abs(progress - center) / slice;
+  const step = 1 / Math.max(panelCount - 1, 1);
+  const distance = Math.abs(progress - index * step) / step;
 
-  return clamp(1 - (distance - 0.35) / 0.5, 0, 1);
+  return clamp(1 - (distance - 0.78) / 0.22, 0, 1);
 }
 
 export function initStickySection() {
@@ -47,8 +50,8 @@ export function initStickySection() {
 
     panels.forEach((panel, index) => {
       const opacity = panelOpacity(progress, index, panels.length);
-      const slice = 1 / panels.length;
-      const relative = progress - (slice * index + slice / 2);
+      const step = 1 / Math.max(panels.length - 1, 1);
+      const relative = progress - index * step;
 
       panel.style.setProperty('--panel-opacity', opacity.toFixed(3));
       panel.style.setProperty('--panel-shift', `${(relative * -PANEL_SHIFT).toFixed(1)}px`);
