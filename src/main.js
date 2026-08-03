@@ -6,6 +6,7 @@ import { initStickySection } from './js/sticky.js';
 import { initTester } from './js/tester.js';
 import { initAlternatives } from './js/alternatives.js';
 import { initSymbols } from './js/symbols.js';
+import { initCounters } from './js/counter.js';
 import { initFeedbackForm, initEmailForms } from './js/forms.js';
 
 document.documentElement.setAttribute('lang', 'en');
@@ -16,5 +17,6 @@ initStickySection();
 initTester();
 initAlternatives();
 initSymbols();
+initCounters();
 initFeedbackForm();
 initEmailForms();
